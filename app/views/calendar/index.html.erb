@@ -1,0 +1,25 @@
+<%= link_to "新規作成", :controller => "calendar", :action => "new" %>
+<p>
+  <table>
+    <thead>
+      <th>開始日</th>
+      <th>終了日</th>
+      <th>予定</th>
+    </thead>
+    <tbody>
+      <% @schedule.each do |s| %>
+      <tr>
+        <td>
+          <%= s.start_date.strftime('%Y年%-m月%-d日') %>
+        </td>
+        <td>
+          <%= s.end_date.strftime('%Y年%-m月%-d日') %>
+        </td>
+        <td>
+          <%= s.schedule %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</p>
